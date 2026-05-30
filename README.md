@@ -1,18 +1,18 @@
 <div align="center">
 
 <pre>
-<font color="#dc2626">██████╗ ██████╗ ██╗██╗   ██╗███████╗</font>
-<font color="#ef4444">██╔══██╗██╔══██╗██║██║   ██║██╔════╝</font>
-<font color="#f87171">██████╔╝██████╔╝██║██║   ██║█████╗  </font>
-<font color="#a78bfa">██╔═══╝ ██╔══██╗██║╚██╗ ██╔╝██╔══╝  </font>
-<font color="#8b5cf6">██║     ██║  ██║██║ ╚████╔╝ ███████╗</font>
-<font color="#7c3aed">╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝</font>
+██████╗ ██████╗ ██╗██╗   ██╗███████╗
+██╔══██╗██╔══██╗██║██║   ██║██╔════╝
+██████╔╝██████╔╝██║██║   ██║█████╗  
+██╔═══╝ ██╔══██╗██║╚██╗ ██╔╝██╔══╝  
+██║     ██║  ██║██║ ╚████╔╝ ███████╗
+╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝
 </pre>
 
 <br/>
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-100%25-7c3aed?style=flat-square&logo=typescript&logoColor=white&labelColor=dc2626)
-![JavaScript](https://img.shields.io/badge/JavaScript-20.1%25-7c3aed?style=flat-square&logo=typescript&logoColor=white&labelColor=dc2626)
+![JavaScript](https://img.shields.io/badge/JavaScript-20.1%25-7c3aed?style=flat-square&logo=javascript&logoColor=white&labelColor=dc2626)
 ![Node.js](https://img.shields.io/badge/Node.js-LTS-8b5cf6?style=flat-square&logo=node.js&logoColor=white&labelColor=dc2626)
 ![Ollama](https://img.shields.io/badge/Ollama-Local-a78bfa?style=flat-square&labelColor=dc2626)
 ![Qwen3](https://img.shields.io/badge/Qwen3-Powered-f87171?style=flat-square&labelColor=dc2626)
@@ -22,9 +22,9 @@
 
 <br/>
 
-# <font color="#dc2626">⚡ Prive</font>
+# ⚡ Prive
 
-### <font color="#ef4444">Your Local AI Coding Companion</font>
+### Your Local AI Coding Companion
 
 *Chat. Code. Build. Ship.*
 
@@ -40,25 +40,19 @@ Powered entirely by local AI models through Ollama.
 
 ---
 
-# <font color="#f87171">🚀 Overview</font>
+# 🚀 Overview
 
 Prive is an open-source, terminal-first AI coding assistant designed for developers who want complete control over their workflow.
 
 Unlike cloud-based coding assistants, Prive runs entirely on your machine using local language models such as Qwen, DeepSeek, and Llama through Ollama.
 
-No accounts.
-
-No API keys.
-
-No monthly bills.
-
-Just code.
+No accounts. No API keys. No monthly bills. Just code.
 
 ---
 
-# <font color="#a78bfa">✨ Features</font>
+# ✨ Features
 
-## <font color="#8b5cf6">🤖 Local AI Engine</font>
+## 🤖 Local AI Engine
 
 - Powered by Ollama
 - Supports Qwen, DeepSeek and Llama
@@ -69,7 +63,7 @@ Just code.
 
 ---
 
-## <font color="#7c3aed">💬 Interactive Chat</font>
+## 💬 Interactive Chat
 
 ```bash
 prive
@@ -82,7 +76,7 @@ prive
 
 ---
 
-## <font color="#8b5cf6">📂 Workspace Intelligence</font>
+## 📂 Workspace Intelligence
 
 ```bash
 prive read src/App.tsx
@@ -95,7 +89,7 @@ prive read src/App.tsx
 
 ---
 
-## <font color="#a78bfa">✏️ Code Generation & Editing</font>
+## ✏️ Code Generation & Editing
 
 ```bash
 prive write
@@ -109,7 +103,7 @@ prive write
 
 ---
 
-## <font color="#f87171">💻 Terminal Automation</font>
+## 💻 Terminal Automation
 
 ```bash
 prive run npm install
@@ -122,7 +116,7 @@ prive run npm install
 
 ---
 
-## <font color="#ef4444">🌿 Git Integration</font>
+## 🌿 Git Integration
 
 ```bash
 prive git status
@@ -137,7 +131,7 @@ prive git push
 
 ---
 
-## <font color="#dc2626">🧠 Memory System</font>
+## 🧠 Memory System
 
 Stored locally:
 
@@ -154,7 +148,7 @@ Capabilities:
 
 ---
 
-# <font color="#ef4444">🛰️ Planned Advanced Features</font>
+# 🛰️ Planned Advanced Features
 
 * 🤖 Multi-Agent Architecture
 * 🧠 Autonomous Task Planning
@@ -167,7 +161,7 @@ Capabilities:
 
 ---
 
-# <font color="#f87171">🧱 Project Structure</font>
+# 🧱 Project Structure
 
 ```text
 Prive/
@@ -194,30 +188,30 @@ Prive/
 
 ---
 
-# <font color="#a78bfa">🏗 Architecture</font>
+# 🏗 Architecture
 
 ```text
-<font color="#dc2626">User</font>
+User
  │
  ▼
-<font color="#ef4444">Prive CLI</font>
+Prive CLI
  │
  ▼
-<font color="#f87171">Agent Layer</font>
+Agent Layer
  │
  ▼
-<font color="#a78bfa">AI Layer</font>
+AI Layer
  │
  ▼
-<font color="#8b5cf6">Ollama</font>
+Ollama
  │
  ▼
-<font color="#7c3aed">Qwen / DeepSeek / Llama</font>
+Qwen / DeepSeek / Llama
 ```
 
 ---
 
-# <font color="#8b5cf6">🚀 Installation</font>
+# 🚀 Installation
 
 ```bash
 git clone [https://github.com/vin1397/prive.git](https://github.com/vin1397/prive.git)
@@ -231,7 +225,7 @@ npm run dev
 
 ---
 
-# <font color="#7c3aed">⚙️ Requirements</font>
+# ⚙️ Requirements
 
 ```bash
 ollama pull qwen3
@@ -241,7 +235,7 @@ ollama list
 
 ---
 
-# <font color="#8b5cf6">⚡ Usage</font>
+# ⚡ Usage
 
 ```bash
 prive
@@ -263,7 +257,7 @@ prive fix LoginScreen.tsx
 
 ---
 
-# <font color="#a78bfa">🛣 Roadmap</font>
+# 🛣 Roadmap
 
 ## Phase 1
 
@@ -294,7 +288,7 @@ prive fix LoginScreen.tsx
 
 ---
 
-## <font color="#4c1d95">🤝 Contributing & License</font>
+## 🤝 Contributing & License
 
 Contributions, suggestions, bug reports, and pull requests are welcome. Let's build the future of local AI together.
 
@@ -304,8 +298,6 @@ Distributed under the **MIT License**.
 
 <div align="center">
 
-Built for **Prive** 💜 by **~Vini** 
-
-### Prive — Your Local AI Coding Companion
+Built for **Prive** 💜 by **~Vini** ### Prive — Your Local AI Coding Companion
 
 </div>
