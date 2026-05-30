@@ -11,7 +11,7 @@
 
 <br/>
 
-![TypeScript](https://img.shields.io/badge/TypeScript-79.9%25-7c3aed?style=flat-square&logo=typescript&logoColor=white&labelColor=dc2626)
+![TypeScript](https://img.shields.io/badge/TypeScript-100%25-7c3aed?style=flat-square&logo=typescript&logoColor=white&labelColor=dc2626)
 ![JavaScript](https://img.shields.io/badge/JavaScript-20.1%25-7c3aed?style=flat-square&logo=typescript&logoColor=white&labelColor=dc2626)
 ![Node.js](https://img.shields.io/badge/Node.js-LTS-8b5cf6?style=flat-square&logo=node.js&logoColor=white&labelColor=dc2626)
 ![Ollama](https://img.shields.io/badge/Ollama-Local-a78bfa?style=flat-square&labelColor=dc2626)
@@ -24,12 +24,13 @@
 
 # <font color="#dc2626">⚡ Prive</font>
 
-### <font color="#8b5cf6">Your Local AI Coding Companion</font>
+### <font color="#ef4444">Your Local AI Coding Companion</font>
 
 *Chat. Code. Build. Ship.*
 
-> **No subscriptions. No cloud dependency. No API bills.**
-> Powered entirely by local AI models through Ollama.
+**No subscriptions. No cloud dependency. No API bills.**
+
+Powered entirely by local AI models through Ollama.
 
 <br/>
 
@@ -39,157 +40,275 @@
 
 ---
 
-## <font color="#ef4444">🚀 Overview</font>
+# <font color="#f87171">🚀 Overview</font>
 
-Prive is an open-source, terminal-first AI coding assistant designed for developers who want complete control over their workflow. 
+Prive is an open-source, terminal-first AI coding assistant designed for developers who want complete control over their workflow.
 
-Unlike cloud-based coding assistants, Prive runs entirely on your machine using local language models such as **Qwen**, **DeepSeek**, and **Llama** through Ollama.
+Unlike cloud-based coding assistants, Prive runs entirely on your machine using local language models such as Qwen, DeepSeek, and Llama through Ollama.
 
-No accounts. No API keys. No monthly bills. **Just code.**
+No accounts.
 
----
+No API keys.
 
-## <font color="#f87171">✨ Features</font>
+No monthly bills.
 
-| Capability | Description |
-| :--- | :--- |
-| 🤖 **Local AI Engine** | Powered by Ollama. Supports Qwen, DeepSeek & Llama. Fully offline capable. |
-| 💬 **Interactive Chat** | Project-aware conversations with multi-turn memory & context awareness. |
-| 📂 **Workspace Intel** | Reads files, analyzes repos, and generates architecture summaries. |
-| ✏️ **Code Generation** | Creates files, modifies syntax, refactors, and generates boilerplate code. |
-| 💻 **Terminal Automation** | Executes commands, captures output, monitors processes autonomously. |
-| 🌿 **Git Integration** | Repository analysis, smart commit generation, and branch management. |
+Just code.
 
 ---
 
-## <font color="#a78bfa">⚡ Commands & Usage</font>
+# <font color="#a78bfa">✨ Features</font>
 
-Fire up the intelligence layer with a single command:
+## <font color="#8b5cf6">🤖 Local AI Engine</font>
+
+- Powered by Ollama
+- Supports Qwen, DeepSeek and Llama
+- Fully offline capable
+- No API keys required
+- No usage limits
+- Privacy-first architecture
+
+---
+
+## <font color="#7c3aed">💬 Interactive Chat</font>
 
 ```bash
 prive
 ```
 
-### <font color="#8b5cf6">Directives</font>
-
-* **Explain Project:** <kbd>prive explain project</kbd>
-* **Analyze File:** <kbd>prive read src/App.tsx</kbd>
-* **Run Terminal Commands:** <kbd>prive run npm install</kbd>
-* **Version Control:** <kbd>prive git status</kbd>
-* **Autonomous Fixes:** <kbd>prive fix LoginScreen.tsx</kbd>
-
-> **🧠 Memory System:** All session history, project preferences, and workspace memory are stored safely offline in your local `.prive/` directory.
+* Project-aware conversations
+* Multi-turn memory
+* Natural language development workflows
+* Context-aware responses
 
 ---
 
-## <font color="#8b5cf6">🧱 Project Structure</font>
+## <font color="#8b5cf6">📂 Workspace Intelligence</font>
+
+```bash
+prive read src/App.tsx
+```
+
+* Read files
+* Analyze repositories
+* Generate architecture summaries
+* Understand project structure
+
+---
+
+## <font color="#a78bfa">✏️ Code Generation & Editing</font>
+
+```bash
+prive write
+```
+
+* Create files
+* Modify files
+* Refactor code
+* Generate boilerplate
+* Implement features
+
+---
+
+## <font color="#f87171">💻 Terminal Automation</font>
+
+```bash
+prive run npm install
+```
+
+* Execute commands
+* Capture output
+* Monitor processes
+* Smart command suggestions
+
+---
+
+## <font color="#ef4444">🌿 Git Integration</font>
+
+```bash
+prive git status
+prive git commit
+prive git push
+```
+
+* Repository analysis
+* Commit generation
+* Branch management
+* Release workflows
+
+---
+
+## <font color="#dc2626">🧠 Memory System</font>
+
+Stored locally:
+
+```text
+.prive/
+```
+
+Capabilities:
+
+* Session history
+* Project preferences
+* Workspace memory
+* User settings
+
+---
+
+# <font color="#ef4444">🛰️ Planned Advanced Features</font>
+
+* 🤖 Multi-Agent Architecture
+* 🧠 Autonomous Task Planning
+* 📦 Plugin Ecosystem
+* 🖥 Desktop Studio
+* 🎙 Voice Development
+* 🔍 Intelligent Project Search
+* ⚡ Workflow Automation
+* 🌐 Remote Workspace Support
+
+---
+
+# <font color="#f87171">🧱 Project Structure</font>
 
 ```text
 Prive/
 │
 ├── src/
-│   ├── cli/           # Terminal UI
-│   ├── ai/            # Model communication
-│   ├── filesystem/    # I/O operations
-│   ├── terminal/      # Command execution
-│   ├── git/           # VCS integration
-│   ├── agents/        # Autonomous tasks
-│   ├── config/        # Setup
-│   └── utils/         # Helpers
+│   ├── cli/
+│   ├── ai/
+│   ├── filesystem/
+│   ├── terminal/
+│   ├── git/
+│   ├── agents/
+│   ├── config/
+│   └── utils/
 │
 ├── tests/
 ├── docs/
-├── .prive/            # Local memory store
+├── .prive/
 │
 ├── package.json
 ├── tsconfig.json
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-## <font color="#7c3aed">🏗 Architecture Blueprint</font>
+# <font color="#a78bfa">🏗 Architecture</font>
 
-```mermaid
-graph TD
-    User([Developer]) -->|Prompt| CLI[Prive CLI];
-    CLI --> Agents[Agent Layer];
-    Agents -->|Read/Write| FS[Filesystem];
-    Agents -->|Execute| Term[Terminal];
-    Agents --> AI[AI Layer];
-    AI <--> Ollama[Ollama];
-    Ollama <--> Models[[Qwen / DeepSeek]];
+```text
+<font color="#dc2626">User</font>
+ │
+ ▼
+<font color="#ef4444">Prive CLI</font>
+ │
+ ▼
+<font color="#f87171">Agent Layer</font>
+ │
+ ▼
+<font color="#a78bfa">AI Layer</font>
+ │
+ ▼
+<font color="#8b5cf6">Ollama</font>
+ │
+ ▼
+<font color="#7c3aed">Qwen / DeepSeek / Llama</font>
 ```
 
 ---
 
-## <font color="#6d28d9">🚀 Installation Protocol</font>
+# <font color="#8b5cf6">🚀 Installation</font>
 
-**1. Clone the repository:**
 ```bash
 git clone [https://github.com/vin1397/prive.git](https://github.com/vin1397/prive.git)
-cd prive
-```
 
-**2. Install dependencies & run:**
-```bash
+cd prive
+
 npm install
+
 npm run dev
 ```
 
-**3. Setup Ollama Requirements:**
+---
+
+# <font color="#7c3aed">⚙️ Requirements</font>
+
 ```bash
 ollama pull qwen3
+
 ollama list
 ```
 
 ---
 
-## <font color="#5b21b6">🛣 Roadmap</font>
+# <font color="#8b5cf6">⚡ Usage</font>
 
-<details>
-<summary><b>Click to expand roadmap phases</b></summary>
+```bash
+prive
+```
 
-<br/>
+Example:
 
-### Phase 1 
+```bash
+prive explain project
+
+prive read src/App.tsx
+
+prive run npm install
+
+prive git status
+
+prive fix LoginScreen.tsx
+```
+
+---
+
+# <font color="#a78bfa">🛣 Roadmap</font>
+
+## Phase 1
+
 * 🟩 Interactive Chat
 * 🟩 Ollama Integration
 * 🟩 Terminal UI
 * 🟩 Qwen Support
 
-### Phase 2
-* ⬜ File Reading & Writing
+## Phase 2
+
+* ⬜ File Reading
+* ⬜ File Writing
 * ⬜ Project Search
-* ⬜ Terminal Commands Integration
+* ⬜ Terminal Commands
 
-### Phase 3
+## Phase 3
+
 * ⬜ Git Integration
-* ⬜ Local Memory Storage
+* ⬜ Local Memory
 
-### Phase 4
+## Phase 4
+
 * ⬜ Multi-Agent Architecture
-* ⬜ Autonomous Task Planning
 
-### Phase 5
-* ⬜ Desktop Studio UI
-* ⬜ Voice Development Integration
+## Phase 5
 
-</details>
+* ⬜ Desktop Studio
 
 ---
 
-## <font color="#4c1d95">🤝 Contributing & License</font>
+# <font color="#f87171">🤝 Contributing</font>
 
-Contributions, suggestions, bug reports, and pull requests are welcome. Let's build the future of local AI together.
+Contributions, suggestions, bug reports and pull requests are welcome.
 
-Distributed under the **MIT License**.
+---
+
+# <font color="#ef4444">📜 License</font>
+
+MIT License
 
 ---
 
 <div align="center">
 
-Built for **Prive** 💜 by **~Vini**
+Built for "Prive" by ~Vini 💜
 
 ### Prive — Your Local AI Coding Companion
 
