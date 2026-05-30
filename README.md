@@ -1,4 +1,3 @@
-````md
 <div align="center">
 
 <br/>
@@ -23,6 +22,11 @@
 
 Powered entirely by local AI models through Ollama.
 
+<br/>
+
+<!-- MOTION GRAPHIC PLACEHOLDER -->
+<img src="./assets/demo.gif" alt="Prive Terminal Motion Graphic" width="750" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);"/>
+
 </div>
 
 ---
@@ -33,13 +37,7 @@ Prive is an open-source, terminal-first AI coding assistant designed for develop
 
 Unlike cloud-based coding assistants, Prive runs entirely on your machine using local language models such as Qwen, DeepSeek, and Llama through Ollama.
 
-No accounts.
-
-No API keys.
-
-No monthly bills.
-
-Just code.
+No accounts. No API keys. No monthly bills. Just code.
 
 ---
 
