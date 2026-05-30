@@ -250,7 +250,7 @@ Distributed under the **MIT License**.
 
 <div align="center">
 
-Built for **Prive** 💜 by **~Vini**
+Built for **Prive** 💜 by **~Vin**
 
 ### Prive — Your Local AI Coding Companion
 
