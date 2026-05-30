@@ -1,18 +1,18 @@
 <div align="center">
 
 <pre>
-<font color="#dc2626">██████╗ ██████╗ ██╗██╗   ██╗███████╗</font>
-<font color="#ef4444">██╔══██╗██╔══██╗██║██║   ██║██╔════╝</font>
-<font color="#f87171">██████╔╝██████╔╝██║██║   ██║█████╗  </font>
-<font color="#a78bfa">██╔═══╝ ██╔══██╗██║╚██╗ ██╔╝██╔══╝  </font>
-<font color="#8b5cf6">██║     ██║  ██║██║ ╚████╔╝ ███████╗</font>
-<font color="#7c3aed">╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝</font>
+██████╗ ██████╗ ██╗██╗   ██╗███████╗
+██╔══██╗██╔══██╗██║██║   ██║██╔════╝
+██████╔╝██████╔╝██║██║   ██║█████╗  
+██╔═══╝ ██╔══██╗██║╚██╗ ██╔╝██╔══╝  
+██║     ██║  ██║██║ ╚████╔╝ ███████╗
+╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝
 </pre>
 
 <br/>
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-79.9%25-7c3aed?style=flat-square&logo=typescript&logoColor=white&labelColor=dc2626)
-![JavaScript](https://img.shields.io/badge/JavaScript-20.1%25-7c3aed?style=flat-square&logo=typescript&logoColor=white&labelColor=dc2626)
+![JavaScript](https://img.shields.io/badge/JavaScript-20.1%25-7c3aed?style=flat-square&logo=javascript&logoColor=white&labelColor=dc2626)
 ![Node.js](https://img.shields.io/badge/Node.js-LTS-8b5cf6?style=flat-square&logo=node.js&logoColor=white&labelColor=dc2626)
 ![Ollama](https://img.shields.io/badge/Ollama-Local-a78bfa?style=flat-square&labelColor=dc2626)
 ![Qwen3](https://img.shields.io/badge/Qwen3-Powered-f87171?style=flat-square&labelColor=dc2626)
@@ -22,14 +22,15 @@
 
 <br/>
 
-# <font color="#dc2626">⚡ Prive</font>
+# ⚡ Prive
 
-### <font color="#8b5cf6">Your Local AI Coding Companion</font>
+### Your Local AI Coding Companion
 
 *Chat. Code. Build. Ship.*
 
-> **No subscriptions. No cloud dependency. No API bills.**
-> Powered entirely by local AI models through Ollama.
+**No subscriptions. No cloud dependency. No API bills.**
+
+Powered entirely by local AI models through Ollama.
 
 <br/>
 
@@ -39,9 +40,9 @@
 
 ---
 
-## <font color="#ef4444">🚀 Overview</font>
+## 🚀 Overview
 
-Prive is an open-source, terminal-first AI coding assistant designed for developers who want complete control over their workflow. 
+Prive is an open-source, terminal-first AI coding assistant designed for developers who want complete control over their workflow.
 
 Unlike cloud-based coding assistants, Prive runs entirely on your machine using local language models such as **Qwen**, **DeepSeek**, and **Llama** through Ollama.
 
@@ -49,40 +50,106 @@ No accounts. No API keys. No monthly bills. **Just code.**
 
 ---
 
-## <font color="#f87171">✨ Features</font>
+## ✨ Features
 
-| Capability | Description |
-| :--- | :--- |
-| 🤖 **Local AI Engine** | Powered by Ollama. Supports Qwen, DeepSeek & Llama. Fully offline capable. |
-| 💬 **Interactive Chat** | Project-aware conversations with multi-turn memory & context awareness. |
-| 📂 **Workspace Intel** | Reads files, analyzes repos, and generates architecture summaries. |
-| ✏️ **Code Generation** | Creates files, modifies syntax, refactors, and generates boilerplate code. |
-| 💻 **Terminal Automation** | Executes commands, captures output, monitors processes autonomously. |
-| 🌿 **Git Integration** | Repository analysis, smart commit generation, and branch management. |
+### 🤖 Local AI Engine
 
----
+- Powered by Ollama
+- Supports Qwen, DeepSeek and Llama
+- Fully offline capable
+- No API keys required
+- No usage limits
+- Privacy-first architecture
 
-## <font color="#a78bfa">⚡ Commands & Usage</font>
-
-Fire up the intelligence layer with a single command:
+### 💬 Interactive Chat
 
 ```bash
 prive
 ```
 
-### <font color="#8b5cf6">Directives</font>
+* Project-aware conversations
+* Multi-turn memory
+* Natural language development workflows
+* Context-aware responses
 
-* **Explain Project:** <kbd>prive explain project</kbd>
-* **Analyze File:** <kbd>prive read src/App.tsx</kbd>
-* **Run Terminal Commands:** <kbd>prive run npm install</kbd>
-* **Version Control:** <kbd>prive git status</kbd>
-* **Autonomous Fixes:** <kbd>prive fix LoginScreen.tsx</kbd>
+### 📂 Workspace Intelligence
 
-> **🧠 Memory System:** All session history, project preferences, and workspace memory are stored safely offline in your local `.prive/` directory.
+```bash
+prive read src/App.tsx
+```
+
+* Read files
+* Analyze repositories
+* Generate architecture summaries
+* Understand project structure
+
+### ✏️ Code Generation & Editing
+
+```bash
+prive write
+```
+
+* Create files
+* Modify files
+* Refactor code
+* Generate boilerplate
+* Implement features
+
+### 💻 Terminal Automation
+
+```bash
+prive run npm install
+```
+
+* Execute commands
+* Capture output
+* Monitor processes
+* Smart command suggestions
+
+### 🌿 Git Integration
+
+```bash
+prive git status
+prive git commit
+prive git push
+```
+
+* Repository analysis
+* Commit generation
+* Branch management
+* Release workflows
+
+### 🧠 Memory System
+
+Stored locally:
+
+```text
+.prive/
+```
+
+Capabilities:
+
+* Session history
+* Project preferences
+* Workspace memory
+* User settings
 
 ---
 
-## <font color="#8b5cf6">🧱 Project Structure</font>
+## 🛰️ Planned Advanced Features
+
+* 🤖 Multi-Agent Architecture
+* 🧠 Autonomous Task Planning
+* 📦 Plugin Ecosystem
+* 🖥 Desktop Studio
+* 🎙 Voice Development
+* 🔍 Intelligent Project Search
+* ⚡ Workflow Automation
+* 🌐 Remote Workspace Support
+
+---
+
+## 🧱 Project Structure
 
 ```text
 Prive/
@@ -103,12 +170,13 @@ Prive/
 │
 ├── package.json
 ├── tsconfig.json
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-## <font color="#7c3aed">🏗 Architecture Blueprint</font>
+## 🏗 Architecture Blueprint
 
 ```mermaid
 graph TD
@@ -123,7 +191,7 @@ graph TD
 
 ---
 
-## <font color="#6d28d9">🚀 Installation Protocol</font>
+## 🚀 Installation Protocol
 
 **1. Clone the repository:**
 ```bash
@@ -145,12 +213,7 @@ ollama list
 
 ---
 
-## <font color="#5b21b6">🛣 Roadmap</font>
-
-<details>
-<summary><b>Click to expand roadmap phases</b></summary>
-
-<br/>
+## 🛣 Roadmap
 
 ### Phase 1 
 * 🟩 Interactive Chat
@@ -175,11 +238,9 @@ ollama list
 * ⬜ Desktop Studio UI
 * ⬜ Voice Development Integration
 
-</details>
-
 ---
 
-## <font color="#4c1d95">🤝 Contributing & License</font>
+## 🤝 Contributing & License
 
 Contributions, suggestions, bug reports, and pull requests are welcome. Let's build the future of local AI together.
 
