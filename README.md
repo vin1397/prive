@@ -294,21 +294,17 @@ prive fix LoginScreen.tsx
 
 ---
 
-# <font color="#f87171">🤝 Contributing</font>
+## <font color="#4c1d95">🤝 Contributing & License</font>
 
-Contributions, suggestions, bug reports and pull requests are welcome.
+Contributions, suggestions, bug reports, and pull requests are welcome. Let's build the future of local AI together.
 
----
-
-# <font color="#ef4444">📜 License</font>
-
-MIT License
+Distributed under the **MIT License**.
 
 ---
 
 <div align="center">
 
-Built for "Prive" by ~Vini 💜
+Built for **Prive** 💜 by **~Vini** 
 
 ### Prive — Your Local AI Coding Companion
 
