@@ -11,7 +11,8 @@
 
 <br/>
 
-![TypeScript](https://img.shields.io/badge/TypeScript-100%25-7c3aed?style=flat-square&logo=typescript&logoColor=white&labelColor=dc2626)
+![TypeScript](https://img.shields.io/badge/TypeScript-79.9%25-7c3aed?style=flat-square&logo=typescript&logoColor=white&labelColor=dc2626)
+![JavaScript](https://img.shields.io/badge/JavaScript-20.1%25-7c3aed?style=flat-square&logo=typescript&logoColor=white&labelColor=dc2626)
 ![Node.js](https://img.shields.io/badge/Node.js-LTS-8b5cf6?style=flat-square&logo=node.js&logoColor=white&labelColor=dc2626)
 ![Ollama](https://img.shields.io/badge/Ollama-Local-a78bfa?style=flat-square&labelColor=dc2626)
 ![Qwen3](https://img.shields.io/badge/Qwen3-Powered-f87171?style=flat-square&labelColor=dc2626)
