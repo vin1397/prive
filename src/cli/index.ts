@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+/**
+ * Prive — Your Local AI Coding Companion
+ * Main entry point and interactive loop
+ */
+
 import chalk from 'chalk';
 import path from 'path';
 import { loadSettings, updateSetting } from '../config/settings.js';

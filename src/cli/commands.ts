@@ -170,6 +170,9 @@ export const COMMANDS: CommandDefinition[] = [
 
 // ── Router ────────────────────────────────────────────────────────────────
 
+/**
+ * Resolve a command by name or alias
+ */
 export function resolveCommand(name: string): CommandDefinition | undefined {
   const lower = name.toLowerCase();
   return COMMANDS.find(
@@ -177,6 +180,10 @@ export function resolveCommand(name: string): CommandDefinition | undefined {
   );
 }
 
+/**
+ * Parse and dispatch a raw input string
+ * Returns true if the session should continue, false to exit
+ */
 export async function dispatch(input: string, ctx: Omit<CommandContext, 'args' | 'rawInput'>): Promise<boolean> {
   const trimmed = input.trim();
   if (!trimmed) return true;
@@ -578,5 +585,5 @@ async function handleClear(): Promise<void> {
 }
 
 async function handleExit(): Promise<void> {
-
+  // Handled by dispatch returning false
 }

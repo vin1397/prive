@@ -1,3 +1,6 @@
+/**
+ * AI layer tests for Prive
+ */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { OllamaClient, OllamaError } from '../src/ai/ollama.js';
