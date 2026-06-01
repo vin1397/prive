@@ -3,6 +3,8 @@
  */
 
 import chalk from 'chalk';
+import boxen from "boxen";
+import gradient from "gradient-string";
 
 export type LogLevel = 'debug' | 'info' | 'success' | 'warn' | 'error';
 
@@ -88,45 +90,60 @@ export function kv(key: string, value: string): void {
   console.log(`  ${chalk.gray(key + ':')} ${chalk.white(value)}`);
 }
 
-import boxen from "boxen";
-import gradient from "gradient-string";
-
 export function banner(
   version: string,
   model: string,
   projectName: string
 ): void {
   const logo = gradient(["#7c3aed", "#a855f7", "#c084fc"])(`
-██████╗ ██████╗ ██╗██╗   ██╗███████╗
-██╔══██╗██╔══██╗██║██║   ██║██╔════╝
-██████╔╝██████╔╝██║██║   ██║█████╗
-██╔═══╝ ██╔══██╗██║╚██╗ ██╔╝██╔══╝
-██║     ██║  ██║██║ ╚████╔╝ ███████╗
-╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝
+ ██████╗ ██████╗ ██╗██╗   ██╗███████╗
+ ██╔══██╗██╔══██╗██║██║   ██║██╔════╝
+ ██████╔╝██████╔╝██║██║   ██║█████╗
+ ██╔═══╝ ██╔══██╗██║╚██╗ ██╔╝██╔══╝
+ ██║     ██║  ██║██║ ╚████╔╝ ███████╗
+ ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝
 `);
 
   console.clear();
 
   console.log(logo);
 
-  console.log(
-    boxen(
-`${chalk.cyan("🤖 Model")}   : ${chalk.white(model)}
-${chalk.yellow("📂 Project")} : ${chalk.white(projectName)}
-${chalk.green("🧠 Memory")}  : Enabled
-${chalk.magenta("🌐 Ollama")} : Connected
+  const dashboard = boxen(
+`${chalk.cyan("🤖 AI Model")}      ${chalk.white(model)}
+${chalk.yellow("📂 Workspace")}    ${chalk.white(projectName)}
+${chalk.green("🧠 Memory")}       ${chalk.green("ACTIVE")}
+${chalk.magenta("🌐 Ollama")}      ${chalk.green("CONNECTED")}
+${chalk.blue("⚡ Runtime")}      ${chalk.white("Node.js")}
+${chalk.red("🔥 Agents")}       ${chalk.white("Architect • Coder • Debugger")}
 
-${chalk.gray("Type /help for commands")}`,
-      {
-        padding: 1,
-        borderStyle: "round",
-        borderColor: "magenta"
-      }
-    )
+${chalk.gray("──────────────────────────────────────")}
+
+${chalk.white("Available Commands")}
+${chalk.gray("• /help")}
+${chalk.gray("• /models")}
+${chalk.gray("• /memory")}
+${chalk.gray("• /clear")}
+${chalk.gray("• /exit")}
+
+${chalk.gray("──────────────────────────────────────")}
+
+${chalk.green("✓ Ready")}
+`,
+    {
+      padding: 1,
+      borderStyle: "double",
+      borderColor: "magenta",
+      title: " ⚡ PRIVE ",
+      titleAlignment: "center"
+    }
   );
 
+  console.log(dashboard);
+
   console.log(
-    chalk.gray(`Version ${version} • Your Local AI Coding Companion`)
+    chalk.gray(
+      `Version ${version}  •  Your Local AI Coding Companion`
+    )
   );
 
   console.log("");
