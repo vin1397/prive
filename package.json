@@ -16,24 +16,34 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
+    "boxen": "^8.0.1",
     "chalk": "^5.3.0",
-    "ora": "^7.0.1",
-    "inquirer": "^9.2.12",
+    "cli-table3": "^0.6.5",
+    "execa": "^8.0.1",
     "fs-extra": "^11.2.0",
     "glob": "^10.3.10",
-    "simple-git": "^3.22.0",
-    "execa": "^8.0.1",
-    "node-fetch": "^3.3.2"
+    "gradient-string": "^3.0.0",
+    "inquirer": "^9.2.12",
+    "node-fetch": "^3.3.2",
+    "ora": "^7.0.1",
+    "simple-git": "^3.22.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.0",
     "@types/fs-extra": "^11.0.4",
     "@types/inquirer": "^9.0.7",
-    "typescript": "^5.3.3",
+    "@types/node": "^20.11.0",
     "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
     "vitest": "^1.2.0"
   },
-  "keywords": ["ai", "coding", "ollama", "local", "assistant", "cli"],
+  "keywords": [
+    "ai",
+    "coding",
+    "ollama",
+    "local",
+    "assistant",
+    "cli"
+  ],
   "author": "Prive Contributors",
   "license": "MIT",
   "engines": {

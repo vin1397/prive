@@ -1,5 +1,34 @@
 {
   "version": "0.1.0",
-  "entries": [],
-  "lastUpdated": ""
+  "entries": [
+    {
+      "model": "qwen3:latest",
+      "projectName": "Prive",
+      "projectRoot": "D:\\projects\\Prive",
+      "messages": [
+        {
+          "role": "user",
+          "content": "npm run build",
+          "timestamp": "2026-06-01T18:06:16.480Z"
+        }
+      ],
+      "id": "session-2026-06-01T18-06-20",
+      "timestamp": "2026-06-01T18:06:20.593Z"
+    },
+    {
+      "model": "qwen3:latest",
+      "projectName": "Prive",
+      "projectRoot": "D:\\projects\\Prive",
+      "messages": [
+        {
+          "role": "user",
+          "content": "npm unlink -g prive",
+          "timestamp": "2026-06-01T17:48:42.802Z"
+        }
+      ],
+      "id": "session-2026-06-01T17-48-50",
+      "timestamp": "2026-06-01T17:48:50.670Z"
+    }
+  ],
+  "lastUpdated": "2026-06-01T18:06:20.593Z"
 }

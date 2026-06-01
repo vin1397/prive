@@ -88,17 +88,48 @@ export function kv(key: string, value: string): void {
   console.log(`  ${chalk.gray(key + ':')} ${chalk.white(value)}`);
 }
 
-/**
- * Print the startup banner
- */
-export function banner(version: string, model: string, projectName: string): void {
-  console.log('');
-  console.log(chalk.bold.yellow('⚡') + chalk.bold.white(` Prive`) + chalk.gray(` v${version}`));
-  console.log(chalk.gray('  Your Local AI Coding Companion'));
-  console.log('');
-  console.log(chalk.gray('  🤖 Model:   ') + chalk.cyan(model));
-  console.log(chalk.gray('  📂 Project: ') + chalk.cyan(projectName));
-  console.log('');
+import boxen from "boxen";
+import gradient from "gradient-string";
+
+export function banner(
+  version: string,
+  model: string,
+  projectName: string
+): void {
+  const logo = gradient(["#7c3aed", "#a855f7", "#c084fc"])(`
+██████╗ ██████╗ ██╗██╗   ██╗███████╗
+██╔══██╗██╔══██╗██║██║   ██║██╔════╝
+██████╔╝██████╔╝██║██║   ██║█████╗
+██╔═══╝ ██╔══██╗██║╚██╗ ██╔╝██╔══╝
+██║     ██║  ██║██║ ╚████╔╝ ███████╗
+╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝
+`);
+
+  console.clear();
+
+  console.log(logo);
+
+  console.log(
+    boxen(
+`${chalk.cyan("🤖 Model")}   : ${chalk.white(model)}
+${chalk.yellow("📂 Project")} : ${chalk.white(projectName)}
+${chalk.green("🧠 Memory")}  : Enabled
+${chalk.magenta("🌐 Ollama")} : Connected
+
+${chalk.gray("Type /help for commands")}`,
+      {
+        padding: 1,
+        borderStyle: "round",
+        borderColor: "magenta"
+      }
+    )
+  );
+
+  console.log(
+    chalk.gray(`Version ${version} • Your Local AI Coding Companion`)
+  );
+
+  console.log("");
 }
 
 export const logger = { info, success, warn, error, debug, ai, aiEnd, divider, header, kv, banner };
