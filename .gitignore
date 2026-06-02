@@ -8,6 +8,7 @@ build/
 # Prive runtime data (keep structure, ignore data)
 .prive/memory.json
 .prive/projects.json
+.prive/settings.json
 
 # Environment
 .env
