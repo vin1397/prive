@@ -4,6 +4,7 @@
 
 import readline from 'readline';
 import chalk from 'chalk';
+import { sysSnapshot } from '../utils/logger.js';
 
 // ── Types ─────────────────────────────────────────────────────────────────
 
@@ -46,10 +47,10 @@ export function closeReadline(): void {
 }
 
 /**
- * Render the interactive prompt string
+ * Render the interactive prompt string with live system stats
  */
-export function renderPrompt(options: PromptOptions): string {
-  return chalk.cyan('❯ ');
+export function renderPrompt(_options: PromptOptions): string {
+  return chalk.hex('#4b4b6b')(sysSnapshot()) + ' ' + chalk.hex('#dc2626')('❯ ');
 }
 
 /**
@@ -69,7 +70,7 @@ export function askLine(promptText: string): Promise<string> {
  */
 export async function confirm(question: string, defaultYes = true): Promise<boolean> {
   const hint = defaultYes ? '[Y/n]' : '[y/N]';
-  const answer = await askLine(`${chalk.yellow('?')} ${question} ${chalk.gray(hint)}: `);
+  const answer = await askLine(`${chalk.yellow('?')} ${question} ${chalk.hex('#4b4b6b')(hint)}: `);
   const trimmed = answer.trim().toLowerCase();
 
   if (!trimmed) return defaultYes;
@@ -81,8 +82,8 @@ export async function confirm(question: string, defaultYes = true): Promise<bool
  */
 export function askMultiline(promptText: string): Promise<string> {
   return new Promise(resolve => {
-    console.log(chalk.gray(promptText));
-    console.log(chalk.gray('(Enter an empty line to finish)'));
+    console.log(chalk.hex('#4b4b6b')(promptText));
+    console.log(chalk.hex('#4b4b6b')('(Enter an empty line to finish)'));
 
     const lines: string[] = [];
     const rl = getReadline();
