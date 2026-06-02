@@ -1,5 +1,5 @@
 {
-  "model": "qwen2.5-coder",
+  "model": "qwen3:latest",
   "ollamaHost": "http://localhost:11434",
   "temperature": 0.7,
   "contextFiles": [],
@@ -7,5 +7,6 @@
   "streamResponses": true,
   "showThinking": false,
   "maxHistoryLength": 50,
-  "theme": "dark"
+  "theme": "dark",
+  "workingDirectory": "D:\\projects\\Prive"
 }
