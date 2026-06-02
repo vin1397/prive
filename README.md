@@ -595,7 +595,7 @@ Contributions, bug reports, and pull requests are welcome.
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=7c3aed&height=80&section=footer"/>
 
-Built with 💜 by **~Vin**
+Built For **Prive**💜 by **~Vin**
 
 **Prive — Your Local AI Coding Companion**
 
