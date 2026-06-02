@@ -465,47 +465,17 @@ Prive/
 
 <div align="center">
 
-## 🏗 Architecture
+## 🏗 Architecture Blueprint
 
-</div>
-
-```
-Developer
-    │
-    ▼
-┌─────────────────────────────────────┐
-│           CLI Layer                 │
-│  index.ts · commands.ts · prompt.ts │
-└──────────┬──────────────────────────┘
-           │
-    ┌──────┼───────────┐
-    ▼      ▼           ▼
-┌────────┐ ┌────────┐ ┌──────────┐
-│ Agents │ │  Git   │ │ Terminal │
-│Coder   │ │status  │ │ execute  │
-│Debugger│ │commit  │ │ sandbox  │
-│Archit. │ │push    │ └──────────┘
-└────┬───┘ └────────┘
-     │
-     ▼
-┌─────────────────────────────────────┐
-│             AI Layer                │
-│  ollama.ts · chat.ts · context.ts   │
-│           memory.ts                 │
-└──────────────┬──────────────────────┘
-               │
-               ▼
-        ┌─────────────┐
-        │   Ollama    │
-        │ :11434      │
-        └──────┬──────┘
-               │
-        ┌──────▼──────┐
-        │ Local Model │
-        │ qwen2.5     │
-        │ deepseek    │
-        │ llama ...   │
-        └─────────────┘
+```mermaid
+graph TD
+    User([Developer]) -->|Prompt| CLI[Prive CLI];
+    CLI --> Agents[Agent Layer];
+    Agents -->|Read/Write| FS[Filesystem];
+    Agents -->|Execute| Term[Terminal];
+    Agents --> AI[AI Layer];
+    AI <--> Ollama[Ollama];
+    Ollama <--> Models[[Qwen / DeepSeek]];
 ```
 
 ---
