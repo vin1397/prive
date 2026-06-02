@@ -492,6 +492,7 @@ graph TD
     style AI fill:#da3633,stroke:#f85149,stroke-width:2px,color:#fff
     style Ollama fill:#d29922,stroke:#f2cc60,stroke-width:2px,color:#000
     style Models fill:#0e4429,stroke:#26a641,stroke-width:2px,color:#fff
+```
 
 ---
 
