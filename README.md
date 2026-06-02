@@ -517,11 +517,11 @@ graph TD
 - 🟣 Git Integration (status · commit · push · branch · log)
 - 🟣 Local Memory Storage (session history + project registry)
 
-### Phase 4 — Agents ⚡ In Progress
+### Phase 4 — Agents ✅
 - 🟣 Multi-Agent Architecture (Coder · Debugger · Architect)
 - 🟣 Autonomous Task Planner (chain agents across multi-step goals)
 
-### Phase 5 — Studio ✅
+### Phase 5 — Studio ⚡ In Progress
 - 🟣 Desktop Studio UI (Electron — chat, file tree, git, terminal, metrics)
 - 🔲 Voice Development Integration (local Whisper — planned v0.6)
 - ⬜ Generate images
