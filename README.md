@@ -508,6 +508,7 @@ graph TD
 ### Phase 5 — Studio 🔲 Planned
 - 🔲 Desktop Studio UI (Electron / Tauri GUI)
 - 🔲 Voice Development Integration (local Whisper)
+- ⬜ Generate images
 
 ### Phase 6 — Ecosystem 🔲 Planned
 - 🔲 Plugin system (custom JS commands)
