@@ -587,3 +587,136 @@ async function handleClear(): Promise<void> {
 async function handleExit(): Promise<void> {
   // Handled by dispatch returning false
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Phase 4 · 6 command handlers (appended)
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ── /plan ─────────────────────────────────────────────────────────────────
+
+export async function handlePlan(ctx: CommandContext): Promise<void> {
+  const goal = ctx.args.join(' ');
+  if (!goal) {
+    logger.warn('Usage: /plan <goal description>');
+    logger.info('Example: /plan add user authentication with JWT to this Express app');
+    return;
+  }
+
+  const { TaskPlanner } = await import('../agents/planner.js');
+  const planner = new TaskPlanner();
+  await planner.execute(goal, ctx.cwd);
+}
+
+// ── /plugin ───────────────────────────────────────────────────────────────
+
+export async function handlePlugin(ctx: CommandContext): Promise<void> {
+  const { getPluginRegistry, writeExamplePlugin } = await import('../plugins/loader.js');
+  const registry = getPluginRegistry(ctx.cwd);
+
+  const sub = ctx.args[0]?.toLowerCase();
+
+  switch (sub) {
+    case 'list':
+    case undefined: {
+      const plugins = registry.listPlugins();
+      if (plugins.length === 0) {
+        logger.info('No plugins loaded. Place .mjs files in .prive/plugins/');
+        const ok = await import('./prompt.js').then(m => m.confirm('Create example plugin?', true));
+        if (ok) await writeExamplePlugin(ctx.cwd);
+        return;
+      }
+      logger.header(`Plugins (${plugins.length})`);
+      for (const p of plugins) {
+        console.log(`  ${chalk.hex('#a855f7')(p.manifest.name)} ${chalk.hex('#4b4b6b')('v' + p.manifest.version)}`);
+        console.log(`    ${chalk.hex('#4b4b6b')(p.manifest.description)}`);
+        for (const cmd of p.manifest.commands) {
+          console.log(`    ${chalk.hex('#7c3aed')(cmd.name.padEnd(14))} ${chalk.hex('#4b4b6b')(cmd.description)}`);
+        }
+      }
+      console.log('');
+      break;
+    }
+
+    case 'reload': {
+      await registry.loadAll();
+      logger.success('Plugins reloaded');
+      break;
+    }
+
+    case 'example': {
+      await writeExamplePlugin(ctx.cwd);
+      break;
+    }
+
+    default: {
+      // /plugin <pluginName> <commandName> [args...]
+      const pluginName  = ctx.args[0];
+      const commandName = ctx.args[1];
+      const args        = ctx.args.slice(2);
+
+      if (!commandName) {
+        logger.warn(`Usage: /plugin <name> <command> [args...]`);
+        return;
+      }
+
+      await registry.executeCommand(pluginName, commandName, args, ctx.cwd);
+    }
+  }
+}
+
+// ── /mcp ─────────────────────────────────────────────────────────────────
+
+export async function handleMcp(ctx: CommandContext): Promise<void> {
+  const sub  = ctx.args[0]?.toLowerCase();
+  const port = parseInt(ctx.args[1] ?? '3747', 10);
+
+  if (sub === 'stop') {
+    logger.info('MCP server stop is handled by Ctrl+C or /exit');
+    return;
+  }
+
+  logger.info(`Starting MCP server on port ${port}…`);
+  logger.info('Press Ctrl+C or /exit to stop.');
+
+  const { startMcpServer } = await import('../mcp/server.js');
+  try {
+    await startMcpServer({ port, cwd: ctx.cwd });
+    // Keep running until process exits — server runs in background
+  } catch (err) {
+    logger.error('Failed to start MCP server', err);
+  }
+}
+
+// Register the new commands into the existing COMMANDS array at runtime
+// (safe to call multiple times — checks for duplicates)
+(function registerPhase4Commands() {
+  const newCmds = [
+    {
+      name: 'plan',
+      aliases: ['task', 'auto'],
+      description: 'Autonomously plan and execute a multi-step coding task',
+      usage: '/plan <goal>',
+      handler: handlePlan,
+    },
+    {
+      name: 'plugin',
+      aliases: ['plug', 'ext'],
+      description: 'Manage and run Prive plugins from .prive/plugins/',
+      usage: '/plugin [list|reload|example|<name> <cmd>]',
+      handler: handlePlugin,
+    },
+    {
+      name: 'mcp',
+      aliases: ['serve'],
+      description: 'Start the MCP server (Model Context Protocol)',
+      usage: '/mcp [port]',
+      handler: handleMcp,
+    },
+  ];
+
+  for (const cmd of newCmds) {
+    if (!COMMANDS.find(c => c.name === cmd.name)) {
+      COMMANDS.push(cmd);
+    }
+  }
+})();

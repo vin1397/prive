@@ -1,8 +1,17 @@
 {
-  "image": {
-    "provider": "comfyui",
-    "host": "http://127.0.0.1:8188",
-    "model": "flux1-dev",
-    "outputDir": "./generated/images"
-  }
+  "model": "qwen2.5-coder",
+  "ollamaHost": "http://localhost:11434",
+  "temperature": 0.7,
+  "streamResponses": true,
+  "autoSaveMemory": true,
+  "maxHistoryLength": 50,
+  "contextFiles": [],
+  "ignorePatterns": [
+    "node_modules",
+    "dist",
+    "build",
+    ".git",
+    "coverage",
+    "__pycache__"
+  ]
 }

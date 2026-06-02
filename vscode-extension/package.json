@@ -1,0 +1,83 @@
+{
+  "name": "prive-vscode",
+  "displayName": "Prive — Local AI Coding Companion",
+  "description": "AI-powered coding assistant using local models via Ollama. No API keys. No cloud.",
+  "version": "0.1.0",
+  "publisher": "prive",
+  "icon": "assets/icon.png",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["AI", "Programming Languages", "Other"],
+  "keywords": ["ai", "ollama", "local", "coding", "assistant", "qwen", "deepseek", "privacy"],
+  "repository": { "type": "git", "url": "https://github.com/vin1397/prive" },
+  "license": "MIT",
+  "activationEvents": ["onStartupFinished"],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "prive.openChat",       "title": "Prive: Open Chat",            "icon": "$(comment-discussion)" },
+      { "command": "prive.explainFile",    "title": "Prive: Explain This File",     "icon": "$(book)" },
+      { "command": "prive.refactorFile",   "title": "Prive: Refactor This File",    "icon": "$(edit)" },
+      { "command": "prive.debugSelection", "title": "Prive: Debug Selected Code",   "icon": "$(bug)" },
+      { "command": "prive.generateTests",  "title": "Prive: Generate Tests",        "icon": "$(beaker)" },
+      { "command": "prive.gitCommit",      "title": "Prive: AI Git Commit Message", "icon": "$(git-commit)" },
+      { "command": "prive.switchModel",    "title": "Prive: Switch Model",          "icon": "$(settings-gear)" }
+    ],
+    "menus": {
+      "editor/context": [
+        { "command": "prive.explainFile",    "group": "prive@1", "when": "editorHasSelection" },
+        { "command": "prive.debugSelection", "group": "prive@2", "when": "editorHasSelection" },
+        { "command": "prive.refactorFile",   "group": "prive@3" }
+      ],
+      "editor/title": [
+        { "command": "prive.openChat", "group": "navigation" }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        { "id": "prive-sidebar", "title": "Prive AI", "icon": "$(zap)" }
+      ]
+    },
+    "views": {
+      "prive-sidebar": [
+        { "type": "webview", "id": "prive.chatView",   "name": "Chat"    },
+        { "type": "webview", "id": "prive.statusView", "name": "Status"  }
+      ]
+    },
+    "configuration": {
+      "title": "Prive",
+      "properties": {
+        "prive.ollamaHost": {
+          "type": "string", "default": "http://localhost:11434",
+          "description": "Ollama server URL"
+        },
+        "prive.model": {
+          "type": "string", "default": "qwen2.5-coder",
+          "description": "Default Ollama model to use"
+        },
+        "prive.temperature": {
+          "type": "number", "default": 0.7, "minimum": 0, "maximum": 2,
+          "description": "Model temperature"
+        },
+        "prive.streamResponses": {
+          "type": "boolean", "default": true,
+          "description": "Stream AI responses in real time"
+        }
+      }
+    },
+    "keybindings": [
+      { "command": "prive.openChat",    "key": "ctrl+shift+p ctrl+shift+p", "mac": "cmd+shift+p cmd+shift+p" },
+      { "command": "prive.explainFile", "key": "ctrl+shift+e",              "mac": "cmd+shift+e", "when": "editorTextFocus" }
+    ]
+  },
+  "scripts": {
+    "build":    "tsc -p tsconfig.json",
+    "watch":    "tsc -p tsconfig.json --watch",
+    "package":  "vsce package",
+    "publish":  "vsce publish"
+  },
+  "devDependencies": {
+    "@types/vscode":    "^1.85.0",
+    "@vscode/vsce":     "^2.22.0",
+    "typescript":       "^5.3.3"
+  }
+}

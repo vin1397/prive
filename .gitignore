@@ -6,7 +6,8 @@ dist/
 build/
 
 # Prive runtime data (keep structure, ignore data)
-.prive/
+.prive/memory.json
+.prive/projects.json
 
 # Environment
 .env
@@ -39,4 +40,3 @@ coverage/
 # Temp files
 *.bak
 *.tmp
-

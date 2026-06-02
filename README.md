@@ -465,18 +465,33 @@ Prive/
 
 <div align="center">
 
-## 🏗 Architecture Blueprint
+## 🏗 Architecture
+
+</div>
 
 ```mermaid
 graph TD
-    User([Developer]) -->|Prompt| CLI[Prive CLI];
-    CLI --> Agents[Agent Layer];
-    Agents -->|Read/Write| FS[Filesystem];
-    Agents -->|Execute| Term[Terminal];
-    Agents --> AI[AI Layer];
-    AI <--> Ollama[Ollama];
-    Ollama <--> Models[[Qwen / DeepSeek]];
-```
+    %% Nodes
+    Dev([💻 Developer]) -->|Prompt| CLI[🛠️ Prive CLI]
+    
+    CLI --> Agent[🤖 Agent Layer]
+    
+    Agent -->|Read / Write| FS[📂 Filesystem]
+    Agent -->|Execute| Term[🖥️ Terminal]
+    Agent --> AI[🧠 AI Layer]
+    
+    AI <--> Ollama[🦙 Ollama]
+    Ollama <--> Models[[🔮 Qwen / DeepSeek]]
+
+    %% Style Configurations
+    style Dev fill:#238636,stroke:#2ea44f,stroke-width:2px,color:#fff
+    style CLI fill:#1f6feb,stroke:#388bfd,stroke-width:2px,color:#fff
+    style Agent fill:#8957e5,stroke:#a371f7,stroke-width:2px,color:#fff
+    style FS fill:#6e7681,stroke:#8b949e,stroke-width:1px,color:#fff
+    style Term fill:#6e7681,stroke:#8b949e,stroke-width:1px,color:#fff
+    style AI fill:#da3633,stroke:#f85149,stroke-width:2px,color:#fff
+    style Ollama fill:#d29922,stroke:#f2cc60,stroke-width:2px,color:#000
+    style Models fill:#0e4429,stroke:#26a641,stroke-width:2px,color:#fff
 
 ---
 
@@ -503,17 +518,17 @@ graph TD
 
 ### Phase 4 — Agents ⚡ In Progress
 - 🟣 Multi-Agent Architecture (Coder · Debugger · Architect)
-- 🔲 Autonomous Task Planner (chain agents across multi-step goals)
+- 🟣 Autonomous Task Planner (chain agents across multi-step goals)
 
-### Phase 5 — Studio 🔲 Planned
-- 🔲 Desktop Studio UI (Electron / Tauri GUI)
-- 🔲 Voice Development Integration (local Whisper)
+### Phase 5 — Studio ✅
+- 🟣 Desktop Studio UI (Electron — chat, file tree, git, terminal, metrics)
+- 🔲 Voice Development Integration (local Whisper — planned v0.6)
 - ⬜ Generate images
 
-### Phase 6 — Ecosystem 🔲 Planned
-- 🔲 Plugin system (custom JS commands)
-- 🔲 MCP server (Model Context Protocol)
-- 🔲 VS Code extension
+### Phase 6 — Ecosystem ⚡ In Progress
+- 🟣 Plugin system (.prive/plugins/ — load custom .mjs commands)
+- 🟣 MCP server (JSON-RPC · compatible with Claude Desktop, Cursor)
+- 🟣 VS Code extension (chat panel, explain, refactor, debug, commit)
 - 🔲 Remote workspace support
 
 ---
@@ -579,7 +594,7 @@ Contributions, bug reports, and pull requests are welcome.
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=7c3aed&height=80&section=footer"/>
 
-Built for **Prive** 💜 by **~Vin**
+Built with 💜 by **~Vin**
 
 **Prive — Your Local AI Coding Companion**
 
