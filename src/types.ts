@@ -4,3 +4,5 @@ export interface ImageConfig {
   model: string;
   outputDir: string;
 }
+
+export { createTextToImageWorkflow, createImageEditWorkflow } from './image/workflows';

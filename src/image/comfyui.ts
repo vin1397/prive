@@ -1,41 +1,54 @@
-import { ImageConfig } from '../types';
-import fs from 'fs';
 import axios from 'axios';
+import { ImageConfig } from '../types';
+import { createTextToImageWorkflow, createImageEditWorkflow } from './workflows';
 
-const configPath = './prive.config.json';
-const configFileContent = fs.readFileSync(configPath, 'utf8');
-const imageConfig: ImageConfig = JSON.parse(configFileContent);
+const config: ImageConfig = {
+  provider: 'comfyui',
+  host: 'http://127.0.0.1:8188',
+  model: 'flux1-dev',
+  outputDir: './generated/images'
+};
 
-class ComfyUI {
-  private host: string;
-  private model: string;
-  private outputDir: string;
-
-  constructor() {
-    this.host = imageConfig.host;
-    this.model = imageConfig.model;
-    this.outputDir = imageConfig.outputDir;
-  }
-
-  async generate(prompt: string): Promise<string> {
-    // Implement image generation logic here
-    return '';
-  }
-
-  async edit(imagePath: string, prompt: string): Promise<string> {
-    // Implement image editing logic here
-    return '';
-  }
-
-  async healthCheck(): Promise<boolean> {
-    try {
-      const response = await axios.get(`${this.host}/health`);
-      return response.status === 200;
-    } catch (error) {
-      console.error('ComfyUI is offline');
-      return false;
-    }
+async function healthCheck(): Promise<boolean> {
+  try {
+    const response = await axios.get(`${config.host}/health`);
+    return response.status === 200;
+  } catch (error) {
+    console.error('ComfyUI is offline');
+    return false;
   }
 }
 
-export default new ComfyUI();
+async function generate(prompt: string): Promise<string> {
+  if (!(await healthCheck())) {
+    throw new Error('ComfyUI is offline');
+  }
+
+  try {
+    const workflow = createTextToImageWorkflow(prompt);
+    const response = await axios.post(`${config.host}/prompt`, workflow);
+    // Assuming the response contains the image path
+    return `${config.outputDir}/${response.data.imagePath}`;
+  } catch (error) {
+    console.error('Image generation failed');
+    throw error;
+  }
+}
+
+async function edit(imagePath: string, prompt: string): Promise<string> {
+  if (!(await healthCheck())) {
+    throw new Error('ComfyUI is offline');
+  }
+
+  try {
+    const workflow = createImageEditWorkflow(imagePath, prompt);
+    const response = await axios.post(`${config.host}/prompt`, workflow);
+    // Assuming the response contains the edited image path
+    return `${config.outputDir}/${response.data.imagePath}`;
+  } catch (error) {
+    console.error('Image editing failed');
+    throw error;
+  }
+}
+
+export { generate, edit, healthCheck };
