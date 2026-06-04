@@ -1,130 +1,62 @@
 export function createTextToImageWorkflow(prompt: string) {
   return {
-    "3": {
-      "inputs": {
-        "seed": Math.floor(Math.random() * 999999999),
-        "steps": 20,
-        "cfg": 7,
-        "sampler_name": "euler",
-        "scheduler": "normal",
-        "denoise": 1,
-        "model": ["1", 0],
-        "positive": ["6", 0],
-        "negative": ["7", 0],
-        "latent_image": ["5", 0]
-      },
-      "class_type": "KSampler"
-    },
-
-    "4": {
-      "inputs": {
-        "samples": ["3", 0],
-        "vae": ["1", 2]
-      },
-      "class_type": "VAEDecode"
-    },
-
-    "5": {
-      "inputs": {
-        "width": 1024,
-        "height": 1024,
-        "batch_size": 1
-      },
-      "class_type": "EmptyLatentImage"
-    },
-
     "6": {
-      "inputs": {
-        "text": prompt,
-        "clip": ["1", 1]
+      inputs: {
+        text: prompt,
+        clip: ["11", 0]
       },
-      "class_type": "CLIPTextEncode"
-    },
-
-    "7": {
-      "inputs": {
-        "text": "",
-        "clip": ["1", 1]
-      },
-      "class_type": "CLIPTextEncode"
+      class_type: "CLIPTextEncode"
     },
 
     "8": {
-      "inputs": {
-        "filename_prefix": "Prive",
-        "images": ["4", 0]
+      inputs: {
+        samples: ["13", 0],
+        vae: ["10", 0]
       },
-      "class_type": "SaveImage"
-    }
-  };
-}
-
-export function createImageEditWorkflow(
-  imageName: string,
-  prompt: string
-) {
-  return {
-    "1": {
-      "inputs": {
-        "image": imageName
-      },
-      "class_type": "LoadImage"
+      class_type: "VAEDecode"
     },
 
-    "2": {
-      "inputs": {
-        "pixels": ["1", 0],
-        "vae": ["4", 2]
+    "9": {
+      inputs: {
+        filename_prefix: "prive",
+        images: ["8", 0]
       },
-      "class_type": "VAEEncode"
+      class_type: "SaveImage"
     },
 
-    "3": {
-      "inputs": {
-        "seed": Math.floor(Math.random() * 999999999),
-        "steps": 20,
-        "cfg": 7,
-        "sampler_name": "euler",
-        "scheduler": "normal",
-        "denoise": 0.65,
-        "model": ["4", 0],
-        "positive": ["5", 0],
-        "negative": ["6", 0],
-        "latent_image": ["2", 0]
+    "10": {
+      inputs: {
+        vae_name: "ae.safetensors"
       },
-      "class_type": "KSampler"
+      class_type: "VAELoader"
     },
 
-    "5": {
-      "inputs": {
-        "text": prompt,
-        "clip": ["4", 1]
+    "11": {
+      inputs: {
+        clip_name: "qwen_3_4b.safetensors"
       },
-      "class_type": "CLIPTextEncode"
+      class_type: "CLIPLoader"
     },
 
-    "6": {
-      "inputs": {
-        "text": "",
-        "clip": ["4", 1]
+    "12": {
+      inputs: {
+        model_name: "z_image_turbo_bf16.safetensors"
       },
-      "class_type": "CLIPTextEncode"
+      class_type: "UNETLoader"
     },
 
-    "7": {
-      "inputs": {
-        "samples": ["3", 0],
-        "vae": ["4", 2]
+    "13": {
+      inputs: {
+        seed: Math.floor(Math.random() * 999999999),
+        steps: 8,
+        cfg: 1,
+        sampler_name: "euler",
+        scheduler: "normal",
+        denoise: 1,
+        model: ["12", 0],
+        positive: ["6", 0]
       },
-      "class_type": "VAEDecode"
-    },
-
-    "8": {
-      "inputs": {
-        "filename_prefix": "Prive_Edit",
-        "images": ["7", 0]
-      },
-      "class_type": "SaveImage"
+      class_type: "KSampler"
     }
   };
 }
